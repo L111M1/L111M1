@@ -1,34 +1,36 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="360" height="180" viewBox="0 0 360 180" role="img" aria-labelledby="title desc">
-  <title id="title">Top programming languages</title>
+  <title id="title">Most used languages</title>
   <desc id="desc">Python 80.2%, TypeScript 18.8%, CSS 1.0%</desc>
+  <defs>
+    <clipPath id="bar">
+      <rect x="24" y="73" width="312" height="12" rx="6"/>
+    </clipPath>
+  </defs>
 
-  <rect x=".5" y=".5" width="359" height="179" rx="12" fill="#0D1117" stroke="#30363D"/>
+  <rect x=".5" y=".5" width="359" height="179" rx="18" fill="#FAFAF9" stroke="#E7E5E4"/>
 
   <g font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
-    <text x="24" y="33" fill="#F0F6FC" font-size="16" font-weight="600">Languages</text>
-    <text x="24" y="51" fill="#7D8590" font-size="10">Public repository code</text>
+    <text x="24" y="35" fill="#1C1917" font-size="16" font-weight="650">Most used languages</text>
+    <text x="24" y="54" fill="#78716C" font-size="10">Across public repositories</text>
 
-    <g font-size="11">
-      <circle cx="28" cy="82" r="4" fill="#FFD43B"/>
-      <text x="40" y="86" fill="#C9D1D9">Python</text>
-      <text x="139" y="86" fill="#8C959F" text-anchor="end">80.2%</text>
-
-      <circle cx="28" cy="108" r="4" fill="#3178C6"/>
-      <text x="40" y="112" fill="#C9D1D9">TypeScript</text>
-      <text x="139" y="112" fill="#8C959F" text-anchor="end">18.8%</text>
-
-      <circle cx="28" cy="134" r="4" fill="#A855F7"/>
-      <text x="40" y="138" fill="#C9D1D9">CSS</text>
-      <text x="139" y="138" fill="#8C959F" text-anchor="end">1.0%</text>
+    <g clip-path="url(#bar)">
+      <rect x="24" y="73" width="250.26" height="12" fill="#D6A84B"/>
+      <rect x="274.26" y="73" width="58.75" height="12" fill="#5E81AC"/>
+      <rect x="333.01" y="73" width="2.99" height="12" fill="#A88CC8"/>
     </g>
 
-    <g transform="rotate(-90 267 100)">
-      <circle cx="267" cy="100" r="50" fill="none" stroke="#21262D" stroke-width="14"/>
-      <circle cx="267" cy="100" r="50" pathLength="100" fill="none" stroke="#FFD43B" stroke-width="14" stroke-dasharray="80.21 19.79"/>
-      <circle cx="267" cy="100" r="50" pathLength="100" fill="none" stroke="#3178C6" stroke-width="14" stroke-dasharray="18.83 81.17" stroke-dashoffset="-80.21"/>
-      <circle cx="267" cy="100" r="50" pathLength="100" fill="none" stroke="#A855F7" stroke-width="14" stroke-dasharray=".96 99.04" stroke-dashoffset="-99.04"/>
+    <g font-size="10">
+      <circle cx="28" cy="116" r="4" fill="#D6A84B"/>
+      <text x="39" y="119" fill="#57534E">Python</text>
+      <text x="28" y="140" fill="#1C1917" font-size="16" font-weight="650">80.2%</text>
+
+      <circle cx="137" cy="116" r="4" fill="#5E81AC"/>
+      <text x="148" y="119" fill="#57534E">TypeScript</text>
+      <text x="137" y="140" fill="#1C1917" font-size="16" font-weight="650">18.8%</text>
+
+      <circle cx="274" cy="116" r="4" fill="#A88CC8"/>
+      <text x="285" y="119" fill="#57534E">CSS</text>
+      <text x="274" y="140" fill="#1C1917" font-size="16" font-weight="650">1.0%</text>
     </g>
-    <text x="267" y="98" fill="#F0F6FC" font-size="18" font-weight="600" text-anchor="middle">3</text>
-    <text x="267" y="114" fill="#7D8590" font-size="9" text-anchor="middle">languages</text>
   </g>
 </svg>
