@@ -4,17 +4,17 @@
 
 <br/>
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=L111M1&layout=donut&hide_border=true&bg_color=0D1117&title_color=00F5FF&text_color=C9D1D9&icon_color=FF00C8&langs_count=8" alt="Most used languages"/>
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=L111M1&theme=tokyonight" alt="Top languages by commit"/>
 
 <br/><br/>
 
+### `> OPEN_COMMUNICATION_CHANNEL`
+
 <a href="mailto:2457966403@qq.com">
-  <img src="https://img.shields.io/badge/EMAIL-2457966403%40qq.com-0D1117?style=for-the-badge&logo=maildotru&logoColor=00F5FF&labelColor=7B2FFF" alt="Email 2457966403@qq.com"/>
+  <img src="https://img.shields.io/badge/2457966403%40qq.com-CLICK_TO_CONNECT-7B2FFF?style=for-the-badge&logo=minutemailer&logoColor=00F5FF&labelColor=0D1117" alt="Send email to 2457966403@qq.com"/>
 </a>
 
-```text
-┌──[contact@L111M1]─[~/inbox]
-└─$ send-mail 2457966403@qq.com
-```
+<br/>
+<sub>Encrypted channel ready · Click to establish connection</sub>
 
 </div>
