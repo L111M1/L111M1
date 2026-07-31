@@ -7,11 +7,11 @@
     </clipPath>
   </defs>
 
-  <rect x=".5" y=".5" width="359" height="179" rx="18" fill="#FAFAF9" stroke="#E7E5E4"/>
+  <rect x=".5" y=".5" width="359" height="179" rx="18" fill="#161B22" stroke="#30363D"/>
 
   <g font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
-    <text x="24" y="35" fill="#1C1917" font-size="16" font-weight="650">Most used languages</text>
-    <text x="24" y="54" fill="#78716C" font-size="10">Across public repositories</text>
+    <text x="24" y="35" fill="#F0F6FC" font-size="16" font-weight="650">Most used languages</text>
+    <text x="24" y="54" fill="#8C959F" font-size="10">Across public repositories</text>
 
     <g clip-path="url(#bar)">
       <rect x="24" y="73" width="250.26" height="12" fill="#D6A84B"/>
@@ -21,16 +21,16 @@
 
     <g font-size="10">
       <circle cx="28" cy="116" r="4" fill="#D6A84B"/>
-      <text x="39" y="119" fill="#57534E">Python</text>
-      <text x="28" y="140" fill="#1C1917" font-size="16" font-weight="650">80.2%</text>
+      <text x="39" y="119" fill="#B1BAC4">Python</text>
+      <text x="28" y="140" fill="#F0F6FC" font-size="16" font-weight="650">80.2%</text>
 
       <circle cx="137" cy="116" r="4" fill="#5E81AC"/>
-      <text x="148" y="119" fill="#57534E">TypeScript</text>
-      <text x="137" y="140" fill="#1C1917" font-size="16" font-weight="650">18.8%</text>
+      <text x="148" y="119" fill="#B1BAC4">TypeScript</text>
+      <text x="137" y="140" fill="#F0F6FC" font-size="16" font-weight="650">18.8%</text>
 
       <circle cx="274" cy="116" r="4" fill="#A88CC8"/>
-      <text x="285" y="119" fill="#57534E">CSS</text>
-      <text x="274" y="140" fill="#1C1917" font-size="16" font-weight="650">1.0%</text>
+      <text x="285" y="119" fill="#B1BAC4">CSS</text>
+      <text x="274" y="140" fill="#F0F6FC" font-size="16" font-weight="650">1.0%</text>
     </g>
   </g>
 </svg>
