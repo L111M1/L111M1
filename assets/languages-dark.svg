@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="360" height="180" viewBox="0 0 360 180" role="img" aria-labelledby="title desc">
   <title id="title">Most used languages</title>
-  <desc id="desc">Python 80.3%, TypeScript 18.5%, CSS 0.9%</desc>
+  <desc id="desc">Python 73.7%, TypeScript 17.0%, C# 7.7%</desc>
   <defs>
     <clipPath id="bar">
       <rect x="24" y="73" width="312" height="12" rx="6"/>
@@ -15,21 +15,21 @@
 
     <g clip-path="url(#bar)">
       <rect x="24" y="73" width="312" height="12" fill="#21262D"/>
-      <rect x="24.00" y="73" width="250.69" height="12" fill="#D6A84B"/>
-      <rect x="274.69" y="73" width="57.79" height="12" fill="#5E81AC"/>
-      <rect x="332.49" y="73" width="2.94" height="12" fill="#A88CC8"/>
+      <rect x="24.00" y="73" width="229.90" height="12" fill="#D6A84B"/>
+      <rect x="253.90" y="73" width="53.00" height="12" fill="#5E81AC"/>
+      <rect x="306.90" y="73" width="24.06" height="12" fill="#A88CC8"/>
     </g>
 
     <g font-size="10">
       <circle cx="28" cy="116" r="4" fill="#D6A84B"/>
       <text x="39" y="119" fill="#B1BAC4">Python</text>
-      <text x="28" y="140" fill="#F0F6FC" font-size="16" font-weight="650">80.3%</text>
+      <text x="28" y="140" fill="#F0F6FC" font-size="16" font-weight="650">73.7%</text>
       <circle cx="137" cy="116" r="4" fill="#5E81AC"/>
       <text x="148" y="119" fill="#B1BAC4">TypeScript</text>
-      <text x="137" y="140" fill="#F0F6FC" font-size="16" font-weight="650">18.5%</text>
+      <text x="137" y="140" fill="#F0F6FC" font-size="16" font-weight="650">17.0%</text>
       <circle cx="274" cy="116" r="4" fill="#A88CC8"/>
-      <text x="285" y="119" fill="#B1BAC4">CSS</text>
-      <text x="274" y="140" fill="#F0F6FC" font-size="16" font-weight="650">0.9%</text>
+      <text x="285" y="119" fill="#B1BAC4">C#</text>
+      <text x="274" y="140" fill="#F0F6FC" font-size="16" font-weight="650">7.7%</text>
     </g>
   </g>
 </svg>
