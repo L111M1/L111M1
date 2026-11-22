@@ -1,6 +1,6 @@
 <div align="center">
 
-<img width="100%" src="./assets/profile-banner.png" alt="Pixel art of a quiet street at night"/>
+<img width="100%" src="./assets/profile-banner-pixel-night.png" alt="Pixel art of a quiet street at night"/>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/L111M1/L111M1/output/github-contribution-grid-snake-dark.svg">
