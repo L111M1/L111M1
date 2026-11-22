@@ -12,7 +12,7 @@ from urllib.request import Request, urlopen
 
 
 API_ROOT = "https://api.github.com"
-OUTPUT_PATH = Path(__file__).resolve().parents[1] / "assets" / "languages-dark.svg"
+OUTPUT_PATH = Path(__file__).resolve().parents[1] / "assets" / "languages-pixel.svg"
 BAR_X = 24.0
 BAR_WIDTH = 312.0
 COLORS = ("#DDA860", "#7BA5D3", "#B5A0D7")
