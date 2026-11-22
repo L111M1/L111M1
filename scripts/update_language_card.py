@@ -15,11 +15,11 @@ API_ROOT = "https://api.github.com"
 OUTPUT_PATH = Path(__file__).resolve().parents[1] / "assets" / "languages-dark.svg"
 BAR_X = 24.0
 BAR_WIDTH = 312.0
-COLORS = ("#D6A84B", "#5E81AC", "#A88CC8")
+COLORS = ("#DDA860", "#7BA5D3", "#B5A0D7")
 SLOTS = (
-    {"dot_x": 28, "label_x": 39, "value_x": 28},
-    {"dot_x": 137, "label_x": 148, "value_x": 137},
-    {"dot_x": 274, "label_x": 285, "value_x": 274},
+    {"dot_x": 28, "label_x": 40, "value_x": 28},
+    {"dot_x": 132, "label_x": 144, "value_x": 132},
+    {"dot_x": 236, "label_x": 248, "value_x": 236},
 )
 
 
@@ -108,12 +108,12 @@ def generate_svg(totals: Counter[str]) -> str:
         safe_name = html.escape(short_label(language))
         legends.extend(
             [
-                f'      <circle cx="{slot["dot_x"]}" cy="116" r="4" '
+                f'      <rect x="{slot["dot_x"]}" y="112" width="7" height="7" '
                 f'fill="{COLORS[index]}"/>',
                 f'      <text x="{slot["label_x"]}" y="119" '
-                f'fill="#B1BAC4">{safe_name}</text>',
-                f'      <text x="{slot["value_x"]}" y="140" fill="#F0F6FC" '
-                f'font-size="16" font-weight="650">{percentage:.1f}%</text>',
+                f'fill="#C2CCDD">{safe_name}</text>',
+                f'      <text x="{slot["value_x"]}" y="140" fill="#F3E7D6" '
+                f'font-size="16" font-weight="700">{percentage:.1f}%</text>',
             ]
         )
 
@@ -125,18 +125,22 @@ def generate_svg(totals: Counter[str]) -> str:
   <desc id="desc">{description}</desc>
   <defs>
     <clipPath id="bar">
-      <rect x="24" y="73" width="312" height="12" rx="6"/>
+      <rect x="24" y="73" width="312" height="12"/>
     </clipPath>
   </defs>
 
-  <rect x=".5" y=".5" width="359" height="179" rx="18" fill="#161B22" stroke="#30363D"/>
+  <path d="M8 0h344v4h4v4h4v164h-4v4h-4v4H8v-4H4v-4H0V8h4V4h4Z" fill="#3C4B67"/>
+  <path d="M8 4h344v4h4v164h-4v4H8v-4H4V8h4Z" fill="#151C2D"/>
+  <path d="M8 4h44v4H8zM308 172h44v4h-44z" fill="#806044"/>
+  <path d="M24 61h312v2H24z" fill="#303C54"/>
+  <path d="M308 36h6v10h-6zm10-6h6v16h-6zm10-6h6v22h-6z" fill="#DDA860"/>
 
-  <g font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
-    <text x="24" y="35" fill="#F0F6FC" font-size="16" font-weight="650">Most used languages</text>
-    <text x="24" y="54" fill="#8C959F" font-size="10">Across public repositories</text>
+  <g font-family="'Courier New',monospace">
+    <text x="24" y="35" fill="#F3E7D6" font-size="16" font-weight="700">Most used languages</text>
+    <text x="24" y="54" fill="#A7B4C9" font-size="10">Across public repositories</text>
 
     <g clip-path="url(#bar)">
-      <rect x="24" y="73" width="312" height="12" fill="#21262D"/>
+      <rect x="24" y="73" width="312" height="12" fill="#273349"/>
 {segments_svg}
     </g>
 
