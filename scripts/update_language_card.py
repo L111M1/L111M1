@@ -12,7 +12,8 @@ from urllib.request import Request, urlopen
 
 
 API_ROOT = "https://api.github.com"
-OUTPUT_PATH = Path(__file__).resolve().parents[1] / "assets" / "languages-console.svg"
+OUTPUT_PATH = Path(__file__).resolve().parents[1] / "assets" / "languages-public-console.svg"
+EXCLUDED_REPOSITORIES = {"vigiloom-report"}
 BAR_X = 174
 BAR_WIDTH = 94
 LANGUAGE_MARKERS = (
@@ -53,7 +54,9 @@ def public_repositories(owner: str) -> list[dict[str, object]]:
         repositories.extend(
             repository
             for repository in batch
-            if not repository.get("fork") and not repository.get("archived")
+            if not repository.get("fork")
+            and not repository.get("archived")
+            and repository.get("name") not in EXCLUDED_REPOSITORIES
         )
         if len(batch) < 100:
             return repositories
