@@ -8,7 +8,7 @@
   <img alt="GitHub contribution grid snake animation" src="https://raw.githubusercontent.com/L111M1/L111M1/output/github-contribution-grid-snake.svg">
 </picture>
 
-<img width="48%" src="./assets/languages-terminal-rows.svg" alt="Programming language distribution"/><!--
---><a href="mailto:pjglpn66016@163.com"><img width="48%" src="./assets/contact-terminal.svg" alt="Contact · pjglpn66016@163.com"/></a>
+<img width="48%" src="./assets/languages-night.svg" alt="Programming language distribution"/><!--
+--><a href="mailto:pjglpn66016@163.com"><img width="48%" src="./assets/contact-night.svg" alt="Contact · pjglpn66016@163.com"/></a>
 
 </div>

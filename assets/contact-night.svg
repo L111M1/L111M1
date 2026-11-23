@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="180" viewBox="0 0 360 180" role="img" aria-labelledby="title desc">
+  <title id="title">Email contact</title>
+  <desc id="desc">Send an email to pjglpn66016@163.com</desc>
+
+  <defs>
+    <pattern id="pixel-grid" width="8" height="8" patternUnits="userSpaceOnUse">
+      <rect width="2" height="2" fill="#282F40"/>
+    </pattern>
+  </defs>
+  <path d="M1 1h346v4h4v4h4v4h4v166H13v-4H9v-4H5v-4H1Z" fill="#131621" stroke="#333A4C"/>
+  <rect x="256" y="14" width="88" height="41" fill="url(#pixel-grid)"/>
+  <path d="M1 1h42v2H3v14H1zm316 176h40v-14h2v16h-42z" fill="#927454"/>
+  <path d="M24 62h288v1H24zm296 0h4v1h-4zm8 0h8v1h-8z" fill="#333A4C"/>
+  <path d="M306 24h28v22h-28zm4 4v4h4v4h12v-4h4v-4zm0 8v6h20v-6h-4v4h-12v-4z" fill="#C5A075" fill-rule="evenodd"/>
+
+  <g font-family="'Courier New',monospace">
+    <text x="24" y="35" fill="#E1E0E4" font-size="16" font-weight="700">Contact</text>
+    <text x="24" y="54" fill="#9DA6B7" font-size="10">Email</text>
+
+    <text x="24" y="101" fill="#E1E0E4" font-size="19" font-weight="700">pjglpn66016@163.com</text>
+
+    <line x1="24" y1="125.5" x2="336" y2="125.5" stroke="#333A4C"/>
+    <text x="24" y="151" fill="#C5A075" font-size="11" font-weight="600">Send an email</text>
+    <path d="M324 144h12v12h-3v-7h-3v3h-3v3h-3v-3h3v-3h3v-2h-6z" fill="#C5A075"/>
+  </g>
+</svg>
