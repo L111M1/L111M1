@@ -13,14 +13,14 @@
       <path d="M0 0h10v10H0Z" transform="translate(17 -5)" fill="#BE935F" fill-rule="evenodd"/>
       <text x="38" y="5" fill="#DADDE4" font-size="14">Python</text>
       <rect x="174" y="-2" width="94" height="4" fill="#2A3040"/>
-      <rect x="174" y="-2" width="76.52" height="4" fill="#BE935F"/>
+      <rect x="174" y="-2" width="76.51" height="4" fill="#BE935F"/>
       <text x="342" y="5" fill="#EFF0F3" font-size="15" font-weight="700" text-anchor="end">81.4%</text>
     </g>
     <g transform="translate(0 92)">
       <path d="M4 0h2v2h2v2h2v2H8v2H6v2H4V8H2V6H0V4h2V2h2Z" transform="translate(17 -5)" fill="#7D9FBE" fill-rule="evenodd"/>
       <text x="38" y="5" fill="#DADDE4" font-size="14">TypeScript</text>
       <rect x="174" y="-2" width="94" height="4" fill="#2A3040"/>
-      <rect x="174" y="-2" width="6.48" height="4" fill="#7D9FBE"/>
+      <rect x="174" y="-2" width="6.49" height="4" fill="#7D9FBE"/>
       <text x="342" y="5" fill="#EFF0F3" font-size="15" font-weight="700" text-anchor="end">6.9%</text>
     </g>
     <g transform="translate(0 122)">
