@@ -12,14 +12,13 @@ from urllib.request import Request, urlopen
 
 
 API_ROOT = "https://api.github.com"
-OUTPUT_PATH = Path(__file__).resolve().parents[1] / "assets" / "languages-terminal.svg"
-BAR_X = 24.0
-BAR_WIDTH = 312.0
-COLORS = ("#8EADA8", "#668784", "#526C6D")
-SLOTS = (
-    {"dot_x": 28, "label_x": 40, "value_x": 28},
-    {"dot_x": 132, "label_x": 144, "value_x": 132},
-    {"dot_x": 236, "label_x": 248, "value_x": 236},
+OUTPUT_PATH = Path(__file__).resolve().parents[1] / "assets" / "languages-terminal-rows.svg"
+BAR_X = 156
+BAR_WIDTH = 104
+LANGUAGE_MARKERS = (
+    ("#C58E74", "M0 0h10v10H0Z"),
+    ("#80A8CB", "M4 0h2v2h2v2h2v2H8v2H6v2H4V8H2V6H0V4h2V2h2Z"),
+    ("#B49BC9", "M0 0h10v10H0ZM2 2v6h6V2Z"),
 )
 
 
@@ -92,47 +91,32 @@ def generate_svg(totals: Counter[str]) -> str:
         for language, percentage in percentages
     )
 
-    segments: list[str] = []
-    cursor = BAR_X
-    for index, (_, percentage) in enumerate(percentages):
-        width = BAR_WIDTH * percentage / 100
-        segments.append(
-            f'      <rect x="{cursor:.2f}" y="73" width="{width:.2f}" '
-            f'height="12" fill="{COLORS[index]}"/>'
-        )
-        cursor += width
-
-    legends: list[str] = []
+    rows: list[str] = []
     for index, (language, percentage) in enumerate(percentages):
-        slot = SLOTS[index]
+        color, marker_path = LANGUAGE_MARKERS[index]
         safe_name = html.escape(short_label(language))
-        legends.extend(
-            [
-                f'      <rect x="{slot["dot_x"]}" y="112" width="7" height="7" '
-                f'fill="{COLORS[index]}"/>',
-                f'      <text x="{slot["label_x"]}" y="119" '
-                f'fill="#AFBEC3">{safe_name}</text>',
-                f'      <text x="{slot["value_x"]}" y="140" fill="#D9E3E6" '
-                f'font-size="16" font-weight="700">{percentage:.1f}%</text>',
-            ]
+        y = 86 + 32 * index
+        width = BAR_WIDTH * percentage / 100
+        rows.append(
+            f'''    <g transform="translate(0 {y})">
+      <path d="{marker_path}" transform="translate(25 -5)" fill="{color}" fill-rule="evenodd"/>
+      <text x="44" y="4" fill="#D9E3E6" font-size="13">{safe_name}</text>
+      <rect x="{BAR_X}" y="-4" width="{BAR_WIDTH}" height="8" fill="#23343A"/>
+      <rect x="{BAR_X}" y="-4" width="{width:.2f}" height="8" fill="{color}"/>
+      <rect x="{BAR_X}" y="-4" width="{BAR_WIDTH}" height="8" fill="url(#meter-ticks)"/>
+      <text x="336" y="5" fill="#D9E3E6" font-size="15" font-weight="700" text-anchor="end">{percentage:.1f}%</text>
+    </g>'''
         )
 
-    segments_svg = "\n".join(segments)
-    legends_svg = "\n".join(legends)
+    rows_svg = "\n".join(rows)
 
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="360" height="180" viewBox="0 0 360 180" role="img" aria-labelledby="title desc">
   <title id="title">Most used languages</title>
   <desc id="desc">{description}</desc>
   <defs>
-    <pattern id="meter-ticks" width="8" height="12" patternUnits="userSpaceOnUse" x="24">
-      <rect x="7" width="1" height="12" fill="#0D1418" fill-opacity=".45"/>
+    <pattern id="meter-ticks" width="8" height="8" patternUnits="userSpaceOnUse" x="{BAR_X}">
+      <rect x="7" width="1" height="8" fill="#0D1418" fill-opacity=".4"/>
     </pattern>
-    <clipPath id="bar">
-      <rect x="24" y="73" width="312" height="12"/>
-    </clipPath>
-  </defs>
-
-  <defs>
     <pattern id="pixel-grid" width="8" height="8" patternUnits="userSpaceOnUse">
       <rect width="2" height="2" fill="#23343A"/>
     </pattern>
@@ -147,15 +131,7 @@ def generate_svg(totals: Counter[str]) -> str:
     <text x="24" y="35" fill="#D9E3E6" font-size="16" font-weight="700">Most used languages</text>
     <text x="24" y="54" fill="#899DA3" font-size="10">Across public repositories</text>
 
-    <g clip-path="url(#bar)">
-      <rect x="24" y="73" width="312" height="12" fill="#23343A"/>
-{segments_svg}
-      <rect x="24" y="73" width="312" height="12" fill="url(#meter-ticks)"/>
-    </g>
-
-    <g font-size="10">
-{legends_svg}
-    </g>
+{rows_svg}
   </g>
 </svg>
 """
