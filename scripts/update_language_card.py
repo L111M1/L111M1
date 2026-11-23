@@ -12,9 +12,9 @@ from urllib.request import Request, urlopen
 
 
 API_ROOT = "https://api.github.com"
-OUTPUT_PATH = Path(__file__).resolve().parents[1] / "assets" / "languages-night.svg"
-BAR_X = 156
-BAR_WIDTH = 104
+OUTPUT_PATH = Path(__file__).resolve().parents[1] / "assets" / "languages-console.svg"
+BAR_X = 174
+BAR_WIDTH = 94
 LANGUAGE_MARKERS = (
     ("#BE935F", "M0 0h10v10H0Z"),
     ("#7D9FBE", "M4 0h2v2h2v2h2v2H8v2H6v2H4V8H2V6H0V4h2V2h2Z"),
@@ -95,41 +95,30 @@ def generate_svg(totals: Counter[str]) -> str:
     for index, (language, percentage) in enumerate(percentages):
         color, marker_path = LANGUAGE_MARKERS[index]
         safe_name = html.escape(short_label(language))
-        y = 86 + 32 * index
+        y = 62 + 30 * index
         width = BAR_WIDTH * percentage / 100
         rows.append(
             f'''    <g transform="translate(0 {y})">
-      <path d="{marker_path}" transform="translate(25 -5)" fill="{color}" fill-rule="evenodd"/>
-      <text x="44" y="4" fill="#E1E0E4" font-size="13">{safe_name}</text>
-      <rect x="{BAR_X}" y="-4" width="{BAR_WIDTH}" height="8" fill="#282F40"/>
-      <rect x="{BAR_X}" y="-4" width="{width:.2f}" height="8" fill="{color}"/>
-      <rect x="{BAR_X}" y="-4" width="{BAR_WIDTH}" height="8" fill="url(#meter-ticks)"/>
-      <text x="336" y="5" fill="#E1E0E4" font-size="15" font-weight="700" text-anchor="end">{percentage:.1f}%</text>
+      <path d="{marker_path}" transform="translate(17 -5)" fill="{color}" fill-rule="evenodd"/>
+      <text x="38" y="5" fill="#DADDE4" font-size="14">{safe_name}</text>
+      <rect x="{BAR_X}" y="-2" width="{BAR_WIDTH}" height="4" fill="#2A3040"/>
+      <rect x="{BAR_X}" y="-2" width="{width:.2f}" height="4" fill="{color}"/>
+      <text x="342" y="5" fill="#EFF0F3" font-size="15" font-weight="700" text-anchor="end">{percentage:.1f}%</text>
     </g>'''
         )
 
     rows_svg = "\n".join(rows)
 
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="360" height="180" viewBox="0 0 360 180" role="img" aria-labelledby="title desc">
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="360" height="144" viewBox="0 0 360 144" role="img" aria-labelledby="title desc">
   <title id="title">Most used languages</title>
-  <desc id="desc">{description}</desc>
-  <defs>
-    <pattern id="meter-ticks" width="8" height="8" patternUnits="userSpaceOnUse" x="{BAR_X}">
-      <rect x="7" width="1" height="8" fill="#131621" fill-opacity=".4"/>
-    </pattern>
-    <pattern id="pixel-grid" width="8" height="8" patternUnits="userSpaceOnUse">
-      <rect width="2" height="2" fill="#282F40"/>
-    </pattern>
-  </defs>
-  <path d="M1 1h346v4h4v4h4v4h4v166H13v-4H9v-4H5v-4H1Z" fill="#131621" stroke="#333A4C"/>
-  <rect x="256" y="14" width="88" height="41" fill="url(#pixel-grid)"/>
-  <path d="M1 1h42v2H3v14H1zm316 176h40v-14h2v16h-42z" fill="#927454"/>
-  <path d="M24 62h288v1H24zm296 0h4v1h-4zm8 0h8v1h-8z" fill="#333A4C"/>
-  <path d="M308 36h6v10h-6zm10-6h6v16h-6zm10-6h6v22h-6z" fill="#C5A075"/>
+  <desc id="desc">Across public repositories: {description}</desc>
+  <rect x=".5" y=".5" width="359" height="143" rx="5" fill="#11141C" stroke="#343B4B"/>
+  <path d="M6 1h348a5 5 0 0 1 5 5v37H1V6a5 5 0 0 1 5-5Z" fill="#171B26"/>
+  <path d="M1 43.5h358M17 77.5h326M17 107.5h326" stroke="#2A3040"/>
 
   <g font-family="'Courier New',monospace">
-    <text x="24" y="35" fill="#E1E0E4" font-size="16" font-weight="700">Most used languages</text>
-    <text x="24" y="54" fill="#9DA6B7" font-size="10">Across public repositories</text>
+    <text x="17" y="28" fill="#EFF0F3" font-size="16" font-weight="700">Most used languages</text>
+    <text x="342" y="28" fill="#A6AEBE" font-size="12" text-anchor="end">Share</text>
 
 {rows_svg}
   </g>
